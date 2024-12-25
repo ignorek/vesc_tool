@@ -3645,6 +3645,7 @@ p, li { white-space: pre-wrap; }
             <enumNames>BISSC Encoder (SPI)</enumNames>
             <enumNames>TLE5012 Encoder (SSC SW)</enumNames>
             <enumNames>TLE5012 Encoder (SSC HW)</enumNames>
+            <enumNames>MA782 Encoder</enumNames>
             <enumNames>Custom Encoder</enumNames>
         </m_sensor_port_mode>
         <m_invert_direction>

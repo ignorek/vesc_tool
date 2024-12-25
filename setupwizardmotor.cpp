@@ -455,6 +455,12 @@ bool SensorsPage::validatePage()
         mVesc->mcConfig()->updateParamEnum("foc_sensor_mode", 1);
         break;
 
+    case SetupWizardMotor::Sensor_MA782:
+        mVesc->mcConfig()->updateParamEnum("m_sensor_port_mode", 12);
+        mVesc->mcConfig()->updateParamEnum("sensor_mode", 0);
+        mVesc->mcConfig()->updateParamEnum("foc_sensor_mode", 1);
+        break;
+
     default:
         break;
     }
@@ -488,6 +494,7 @@ void SensorsPage::initializePage()
             mSensorMode->addItem("ABI Encoder", SetupWizardMotor::Sensor_EncoderAbi);
             mSensorMode->addItem("AS5047 Encoder", SetupWizardMotor::Sensor_EncoderAs);
             mSensorMode->addItem("AS5X47U Encoder", SetupWizardMotor::Sensor_EncoderAs5x47u);
+            mSensorMode->addItem("MA782 Encoder", SetupWizardMotor::Sensor_MA782);
             mSensorMode->addItem("Resolver", SetupWizardMotor::Sensor_Resolver_AD2S1205);
             mSensorMode->addItem("Sin/Cos Encoder", SetupWizardMotor::Sensor_Encoder_SinCos);
             mSensorMode->addItem("BiSS Encoder", SetupWizardMotor::Sensor_EncoderBiSS);
@@ -605,6 +612,7 @@ int FocPage::nextId() const
     case SetupWizardMotor::Sensor_Encoder_SinCos:
     case SetupWizardMotor::Sensor_EncoderAs:
     case SetupWizardMotor::Sensor_EncoderAs5x47u:
+    case SetupWizardMotor::Sensor_MA782:
         retval = SetupWizardMotor::Page_FocEncoder;
         break;
 
